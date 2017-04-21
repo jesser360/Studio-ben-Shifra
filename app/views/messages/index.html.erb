@@ -1,0 +1,21 @@
+
+<div class="messages">
+  <h1>All The Messages</h1>
+
+  <div class ="container">
+    <br /><br /><br /><br />
+<% @messages.each do |message|%>
+<div class = "message">
+  <p class = "content">
+  <%= message.content%>
+  <%=link_to 'See More',"messages/show/"+(message.id.to_s)%></p>
+
+
+</div>
+<% end %>
+<%= link_to 'New Message', "messages/new"%>
+<%= link_to 'HomePage', "/"%>
+
+
+  </div>
+</div>

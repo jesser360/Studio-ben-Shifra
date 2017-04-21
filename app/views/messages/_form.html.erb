@@ -1,0 +1,16 @@
+
+<div class="create">
+  <div class="container">
+   	<%= form_for(@message) do |f| %>
+  		<div class="field">
+    		<%= f.label :Message %><br>
+    		<%= f.text_area :content %>
+  		</div>
+  		<div class="actions">
+    		<%= f.submit "Create" %>
+  		</div>
+		<% end %>
+  </div>
+  <%= link_to 'See Index',"/messages"%>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="main">
+  <ul class="nav col-md-12 navbar-nav navbar-pull-right">
+  <% if logged_in? %>
+  <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+
+
+  <!-- <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+  <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
+  <li><%= link_to "View your profile", user_path(current_user) %></li>
+  </ul> -->
+  </li>
+  <% else %>
+  <li><%= link_to 'Log in', login_path %></li>
+  <li><%= link_to 'Sign up', signup_path %></li>
+  <% end %>
+  <li><%= link_to 'Cart', '/orders', method: :get %></li>
+  <li><%= link_to 'Home',"/"%></li>
+  </ul>
+</div>

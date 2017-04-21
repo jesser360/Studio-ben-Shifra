@@ -1,0 +1,32 @@
+
+<div class="jumbotron">
+<h2>Welcome to your cart!</h2>
+<p class="lead">
+</div>
+<%order_total = 0%>
+<% if @orders%>
+  <% @orders.each do |order|%>
+  <%= image_tag(order.image) %><br />
+  Item: <%=order.items%><br />
+  Price: <%=order.amount%> $ <br />
+  Quantity:<%=order.quantity%>
+  <%= button_to 'Delete','/orders', :method => "delete", params: {:id => order.id}%>
+  <!-- <%= button_to 'Add', '/orders', :method => "post", params: {:id => order.id} %> -->
+  <%= button_to '+', '/orders/increase/'+(order.id.to_s), :method => "put"%>
+  <%= button_to '-', '/orders/decrease/'+(order.id.to_s), :method => "put"%>
+  <br /><br />
+  <%order_total += (order.amount * order.quantity)%>
+  <%end%>
+  <br />
+  Order Total: <%=order_total%>
+  <%payment = order_total * 100%>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_7etxO4HRzvdlr0m2fbk7V76e"
+          data-description= 'placeholder'
+          data-amount= <%=payment%>
+          data-locale="auto"></script>
+<% else %>
+<h3>Youre cart is empty, go buy something!</h3>
+<%end%>
+<br />
+<%= link_to 'Back to Store','/charges/new' %>

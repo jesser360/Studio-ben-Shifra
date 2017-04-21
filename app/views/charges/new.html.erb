@@ -1,0 +1,11 @@
+<%= render 'messages/nav' %>
+<div class = "container">
+    <%@products.each do |product|%>
+    <div class="col-md-4">
+    <%= image_tag(product.image) %><br />
+    <h1><%= product.title %></h1>
+    Price : <%= product.price %> $
+    <%= button_to 'See more', '/charges/show/'+(product.id.to_s), :controller => "charges", :method => "get"%>
+    </div>
+    <%end%>
+  </div>

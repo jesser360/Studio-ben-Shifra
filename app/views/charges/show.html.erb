@@ -1,0 +1,14 @@
+<%= render 'messages/nav' %>
+<div class="product">
+
+  <div class ="container">
+  <p class = "content">
+    <h1>Heres the product</h1>
+    <%= image_tag(@product.image) %><br />
+  Title: <%= @product.title%></p>
+  <p>Description: <%= @product.description%></p>
+  <p class = "time">
+  Price:<%= @product.price%></p>
+</div>
+</div>
+<%= button_to 'Add to Cart', '/orders', :controller => "orders", :method => "post", params: {:id => @product.id}%>

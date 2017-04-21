@@ -1,0 +1,18 @@
+
+
+  <div class="container">
+    <br />
+    <br />
+    <br />
+    <% if @user %>
+      <h2>Hello, <%=@user.username%></h2>
+      <%end%>
+    <h3>Welcome to message board world</h3>
+    <%= link_to 'See Messages',"/messages"%>
+    <%= link_to 'Shop',"/charges/new"%>
+
+  </div>
+
+
+
+</div>

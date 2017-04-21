@@ -1,0 +1,18 @@
+<div class="message">
+
+  <div class ="container">
+<div class = "message">
+  <p class = "content">
+    <h1>Check out this sweet message</h1>
+    <br /><br />
+  <%= @message.content%></p>
+  <p>written by:
+    <%= @message.user.username%></p>
+  <p class = "time">
+  <%= @message.created_at%></p>
+  <p><%=link_to 'DELETE',"/messages/destroy/"+(@message.id.to_s)%>
+  <%=link_to 'EDIT',"/messages/edit/"+(@message.id.to_s)%></p>
+  <%= link_to 'See Index',"/messages"%>
+</div>
+</div>
+</div>
