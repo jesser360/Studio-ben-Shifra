@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <div class="navvy navbar navbar-fixed-top ">
+    <div class="navvy navbar-fixed-top ">
       <div class="container">
       <ul class = "nav nav-pills navbar-right navvy">
     <% if logged_in? %>
@@ -22,30 +22,17 @@
     <li><%= link_to 'Sign up', signup_path %></li>
     <% end %>
     <li><%= link_to '/orders', method: :get do%>
-    <span class="cart glyphicon glyphicon-shopping-cart"+</span>
+    <span class="cart glyphicon glyphicon-shopping-cart"</span>
     <%end%></li>
   </ul>
   <ul class="nav nav-pills navbar-left navvy">
     <li><%= link_to 'Home',"/"%></li>
     <li><%= link_to 'About',"/about"%></li>
-    <li><%= link_to 'Browse',"/charges/new"%></li>
+    <li><%= link_to 'Shop',"/charges/new"%></li>
   </ul>
 </div>
 </div>
-  <!-- <nav class="navbar navbar-default navbar-fixed-top">
-    <div class ="container-fluid">
-      <ul>
-        <li role="presentation"><%= link_to 'Home',"/"%></li>
-      <% if logged_in? %>
-      <li role="presentation" class="active"><%= link_to 'Log out', logout_path, method: :delete %></li>
-      <% else %>
-      <li role="presentation"><%= link_to 'Log in', login_path %></li>
-      <li><%= link_to 'Sign up', signup_path %></li>
-      <% end %>
-      <li role="presentation"><%= link_to 'Cart', '/orders', method: :get %></li>
-      </ul>
-    </div>
-  </nav> -->
+
 <%= yield %>
 
 <div class="panel">

@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
     if logged_in? && current_user == @message.user
       @message.destroy
       flash[:notice] = @message.content + " was destroyed 4ever"
-      redirect_to '/messages'
+      redirect_to :back
       else
         redirect_to '/messages'
         flash[:notice] = "Not authorized to edit"
@@ -51,10 +51,11 @@ end
     puts params[:product_id]
     puts"HEY IM PARAMS OVER HERE"
     if session[:user_id]
+        @product = Product.find(params[:product_id])
         @message.user = current_user
-        @message.product = params[:product_id]
+        @message.product = @product
         if @message.save
-          redirect_to '/charges/show'+params[:product_id]
+          redirect_to :back
         else
           render 'new'
         end
@@ -66,7 +67,7 @@ end
 
   private
   def message_params
-    params.require(:message).permit(:content).merge(:product_id => params[:product_id])
+    params.require(:message).permit(:content,:product_id)#.merge(:product_id => params[:product_id])
   end
 
 end

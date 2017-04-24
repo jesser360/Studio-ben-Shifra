@@ -17,14 +17,18 @@ body {
 }
 
 .navvy{
-  background-color: #ffddcc;
-  font-size: 1.2em;
+  background-color: #E3D0D0;
+  font-size: 1.3em;
+  font-family: 'Optima', sans-serif;
+  opacity:.9;
 }
 .panel-footer{
-  background-color: #ffddcc;
+  background-color: #F8D6A0;
 }
 .intro{
   font-style: italic;
+  font-family: 'Optima', sans-serif;
+
 }
 .menorah-banner{
   opacity:.7;
@@ -51,6 +55,8 @@ body {
   font-family: 'Optima', sans-serif;
 }
 
+
+
 .total{
   padding:20px;
 }
@@ -72,14 +78,18 @@ body {
 }
 .nouns-cont{
   padding:30px;
-  background-color: lightgray;
+  background-color: #D1CEC2;
 }
-.review-link a:hover, a:visited, a:link, a:active
-{
-    text-decoration: none !important;
+.review-link a:hover{
+    background-color: white;
+    text-decoration: none;
 }
-.review-link{
+.trash-link a:hover{
+  background-color: #D1CEC2;
   text-decoration: none;
+}
+.show-info {
+  box-shadow: 2px 2px 2px 4px #F8D6A0;
 }
 .boxes a:hover, a:visited, a:link, a:active
 {
@@ -118,10 +128,7 @@ body {
    background: #28597a;
    color: white;
    }
-// .add-btn:active {
-//    border-top-color: #a14b1d;
-//    background: #ffa64d;
-//    }
+
    .minus-btn {
      font-size: 20px !important;
       border-top: 1px solid #1092e3;
@@ -144,10 +151,7 @@ body {
       background: #28597a;
       color: white;
       }
-  //  .minus-btn:active {
-  //     border-top-color: #a14b1d;
-  //     background: #ffa64d;
-  //     }
+
 .review-btn {
   font-size: 16px !important;
    border-top: 1px solid #1092e3;
@@ -172,7 +176,7 @@ body {
    }
 .review-btn:active {
    border-top-color: #a14b1d;
-   background: #ffa64d;
+   background: #EEA385;
    }
 .btn {
   font-size: 26px !important;
@@ -198,7 +202,7 @@ body {
    }
 .btn:active {
    border-top-color: #a14b1d;
-   background: #ffa64d;
+   background: #EEA385;
    }
 .card{
   color:black;
@@ -211,7 +215,7 @@ body {
   border-radius: 15px;
 }
 .card:hover{
-  border:2px solid #ffa64d
+  border:2px solid #F8D6A0//#ffa64d
 }
 
 .store-pic{
@@ -223,15 +227,11 @@ body {
   width:400px;
   height:400px;
 }
-.show-info{
-  box-shadow: 2px 2px 2px 4px #ffa64d
-
-}
 .review-comments{
-  border: 1px dotted white;
+ margin:15px
 }
 .review-box{
-  background-color:lightgray;
+  background-color:#D1CEC2;
   border-radius: 10px;
   font-family: 'Optima', sans-serif;
 

@@ -8,31 +8,33 @@
   <% if @orders%>
     <% @orders.each do |order|%>
     <div class ="row">
-    <div class = "col-md-2">
+    <div class = "col-md-1">
+    <%= button_to 'X','/orders', :method => "delete", params: {:id => order.id},:class=>"remove-btn"%>
+  </div>
+  <div class = "col-md-1 text-left">
     <img class="order-image" src="<%= order.image%>" alt="Jewish thing">
     </div>
-    <div class = "col-md-4">
-      <h3><%=order.items%></h3>
-      <h4>$<%=order.amount%></h4>
+    <div class = "col-md-4 text-right">
+      <h2><%=order.items%></h2>
     </div>
-    <div class = "col-md-1">
+    <div class = "col-md-1 text-right">
+      <%= button_to '+', '/orders/increase/'+(order.id.to_s), :method => "put", :class=>"add-btn"%>
+      <%= button_to '-', '/orders/decrease/'+(order.id.to_s), :method => "put",:class=>"minus-btn"%>
+    </div>
+    <div class = "col-md-2 text-left">
     <h3><%=order.quantity%></h3>
     </div>
-    <div class = "col-md-1">
-    <%= button_to '+', '/orders/increase/'+(order.id.to_s), :method => "put", :class=>"add-btn"%>
-    <%= button_to '-', '/orders/decrease/'+(order.id.to_s), :method => "put",:class=>"minus-btn"%>
-    </div>
-    <div class = "col-md-4 text-right">
-    <%= button_to 'X','/orders', :method => "delete", params: {:id => order.id},:class=>"remove-btn"%>
+    <div class = "col-md-3 text-center">
+      <%amount = order.amount * order.quantity%>
+      <h3>$<%=amount%></h3>
   </div>
 </div>
 <hr />
     <%order_total += (order.amount * order.quantity)%>
     <%end%>
-  <br />
   <div class = "row total text-right">
 <%if(order_total!=0)%>
-  <h3>Order Total: <%=order_total%></h3>
+  <h3>Order Total: $<%=order_total%></h3>
   <h5>*Shipping not inlcuded</h5>
   <%payment = order_total * 100%>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -42,9 +44,11 @@
           data-locale="auto"></script>
   </div>
 <% else %>
+<div class="text-center">
 <h2>Your cart is empty, please continue browsing our selection!</h2>
 <%=button_to('Return to Store',{route: '/charges/new', controller: 'charges'}, class:'btn')%>
 <%end%>
+</div>
 <%end%>
 <br />
 </div>
