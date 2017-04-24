@@ -1,8 +1,14 @@
-<div class = "container">
-  <br />
-  <div class = "row home-banner">
-    <%=image_tag('http://i.imgur.com/ijtj4sC.png')%>
+
+  <div class="container-fluid">
+  <div class = "row">
+    <img class="menorah-banner" src="http://i.imgur.com/ULBhpgr.png" alt="Menorah banner">
   </div>
+  <div class="row">
+    <h1 class = "shop-words">Shop</h1>
+  </div>
+
+</div>
+  <div class = "container">
   <div class = "row">
     <%@products.each do |product|%>
     <span><div class="card col-md-4 boxes" style="width: 30rem;">

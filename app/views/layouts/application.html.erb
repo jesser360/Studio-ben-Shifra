@@ -10,29 +10,28 @@
 
 </head>
 <body>
-  <div class="main">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navvy navbar navbar-fixed-top ">
       <div class="container">
-      <ul class = "nav nav-pills navbar-right">
+      <ul class = "nav nav-pills navbar-right navvy">
     <% if logged_in? %>
     <li><%= link_to 'Log out', logout_path, method: :delete %></li>
-    <li class="show-text">Signed in as <%=current_user.username%></li>
 
     </li>
     <% else %>
     <li><%= link_to 'Log in', login_path %></li>
     <li><%= link_to 'Sign up', signup_path %></li>
     <% end %>
+    <li><%= link_to '/orders', method: :get do%>
+    <span class="cart glyphicon glyphicon-shopping-cart"+</span>
+    <%end%></li>
   </ul>
-  <ul class="nav nav-pills navbar-left">
+  <ul class="nav nav-pills navbar-left navvy">
     <li><%= link_to 'Home',"/"%></li>
     <li><%= link_to 'About',"/about"%></li>
     <li><%= link_to 'Browse',"/charges/new"%></li>
-    <li><%= link_to 'Shopping Cart', '/orders', method: :get %></li>
   </ul>
 </div>
-</nav>
-  </div>
+</div>
   <!-- <nav class="navbar navbar-default navbar-fixed-top">
     <div class ="container-fluid">
       <ul>
@@ -49,10 +48,10 @@
   </nav> -->
 <%= yield %>
 
-<div class="panel panel-default">
+<div class="panel">
   <div class="panel-footer text-center">
     <p>studiobenshifra@gmail.com-Jerry Rosenbloom</p>
-    <p>(310)-780-0127 Cell | 702-209-2482 Home</p>
+    <p>(310)-780-0127 Cell | (702)-209-2482 Home</p>
   </div>
 </div>
 </body>

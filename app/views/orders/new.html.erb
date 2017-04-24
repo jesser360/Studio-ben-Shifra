@@ -33,6 +33,7 @@
   <div class = "row total text-right">
 <%if(order_total!=0)%>
   <h3>Order Total: <%=order_total%></h3>
+  <h5>*Shipping not inlcuded</h5>
   <%payment = order_total * 100%>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_7etxO4HRzvdlr0m2fbk7V76e"
@@ -41,7 +42,7 @@
           data-locale="auto"></script>
   </div>
 <% else %>
-<h2>Youre cart is empty, Please continue browsing our selection!</h2>
+<h2>Your cart is empty, please continue browsing our selection!</h2>
 <%=button_to('Return to Store',{route: '/charges/new', controller: 'charges'}, class:'btn')%>
 <%end%>
 <%end%>

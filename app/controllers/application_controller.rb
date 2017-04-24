@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout "application"
-
+  CART_TOTAL = 0
   helper_method :current_user, :logged_in?
 
 

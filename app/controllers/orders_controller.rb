@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   skip_before_action :verify_authenticity_token
-
   def new
     if(session[:user_id])
     @orders = Order.where(user_id: session[:user_id])

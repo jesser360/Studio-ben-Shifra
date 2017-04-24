@@ -16,15 +16,79 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.navvy{
+  background-color: #ffddcc;
+  font-size: 1.2em;
+}
+.panel-footer{
+  background-color: #ffddcc;
+}
+.intro{
+  font-style: italic;
+}
+.menorah-banner{
+  opacity:.7;
+  height:350px;
+  width:100% !important;
+}
+.shop-words{
+  position: absolute;
+  font-size:12em;
+  margin-top: -250px;
+  margin-left: 85px;
+  text-align: center;
+  font-family: 'Optima', sans-serif;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
 .container {
   margin: 0 auto;
   width: 960px;
   font-family: 'Optima', sans-serif;
 }
 
+.total{
+  padding:20px;
+}
+.home-banner{
+  background-size: cover;
+  width:100%;
+  margin:0;
+}
+.nouns{
+  // background-colorgray;
+}
+
+.noun{
+  height:100px;
+  width:100px;
+  text-align: center;
+  display: block;
+  margin:0 auto;
+}
+.nouns-cont{
+  padding:30px;
+  background-color: lightgray;
+}
+.review-link a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none !important;
+}
+.review-link{
+  text-decoration: none;
+}
 .boxes a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
+}
+.boxes-cont{
+  position:relative;
+  display:inline-block;
+  margin:0 auto;
 }
 .remove-btn{
   font-size:20px;
@@ -160,7 +224,7 @@ body {
   height:400px;
 }
 .show-info{
-  box-shadow: 3px 3px 3px 2px #ffa64d;
+  box-shadow: 2px 2px 2px 4px #ffa64d
 
 }
 .review-comments{
@@ -168,10 +232,9 @@ body {
 }
 .review-box{
   background-color:lightgray;
-  background-repeat:repeat;
   border-radius: 10px;
-  height:100% !important;
-  width:100% !important;
+  font-family: 'Optima', sans-serif;
+
 }
 .show-text{
   color:black;
@@ -187,7 +250,6 @@ body {
 .about-banner{
   width:100%;
   height:100%;
-  background: url('http://i.imgur.com/yKiEPhQ.png') no-repeat;
   background-size: cover;
 
 }

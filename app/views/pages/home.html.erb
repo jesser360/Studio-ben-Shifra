@@ -1,17 +1,37 @@
 
 
   <div class="container">
+    <br /><br /><br />
     <div class = "row">
-      <!-- <div class = "col-md-4">
-        <br />
-        <h4>We make nice Judaica art for every occasion, rememberance, celebration, and nostalgia</h4>
-      </div> -->
+      <div class="col-md-4">
+        <h3 class="intro">Judaica art for every occasion, rememberance, celebration, and nostalgia</h3>
+      </div>
+      <div class="col-md-8">
+        <img class="home-banner" src="http://i.imgur.com/uJcT0By.jpg" alt="Studio logo">
+      </div>
+    </div>
+    <br /><br />
+  </div>
+    <div class = "row nouns-cont">
       <br />
+      <div class="col-md-4 text-center nouns">
+        <img class=" noun" src="http://i.imgur.com/dpDATZN.png" alt="Torah">
+        <p>Historically accurate pieces of Jewish history represented in beautiful jewish ritual items.
+           </p>
+      </div>
+      <div class="col-md-4 text-center nouns">
+        <img class=" noun" src="http://i.imgur.com/06CP0cG.png" alt="Jewish star">
+        <p> Bring the family together for the important moments in life. Keep traditions strong for the generations to come</p>
+      </div>
+      <div class="col-md-4 text-center nouns">
+        <img class=" noun" src="http://i.imgur.com/9qpd2QZ.png" alt="Pencil and ruler">
+        <p>Everything you see in our store is crafted by hand in our studio in Las Vegas.
+          Materials bought only from the USA and Israel</p>
+      </div>
+      <br /><br />
     </div>
-    <div class = "row home-banner">
-      <%=image_tag('http://i.imgur.com/ijtj4sC.png')%>
-    </div>
-
+    <br /><br />
+    <div class="container">
     <div class = "row">
       <%@products.take(3).each do |product|%>
       <span><div class="card col-md-4 boxes" style="width: 30rem;">
