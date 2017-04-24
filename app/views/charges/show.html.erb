@@ -1,14 +1,48 @@
-<%= render 'messages/nav' %>
-<div class="product">
+<div class ="container">
+  <br /><br />
 
-  <div class ="container">
-  <p class = "content">
-    <h1>Heres the product</h1>
-    <%= image_tag(@product.image) %><br />
-  Title: <%= @product.title%></p>
-  <p>Description: <%= @product.description%></p>
-  <p class = "time">
-  Price:<%= @product.price%></p>
+  <div class="row">
+    <div class = "col-md-6">
+    <img class="show-pic" src="<%= @product.image%>" alt="Jewish thing">
+    </div>
+<div class = "col-md-6 show-info">
+    <h2> <%= @product.title%></h2>
+    <h4><%= @product.messages.length%> Reviews</h4>
+    <hr />
+    <h4> <%= @product.description%></h4>
+    <hr />
+  <div class="row">
+      <div class = "col-md-6">
+      <h3>$<%= @product.price%></h3>
+      </div>
+    <div class = "col-md-6">
+      <%= button_to 'Add to Cart', '/orders', :controller => "orders", :method => "post", params: {:id => @product.id}, class: 'btn'%>
+    </div>
+  </div>
 </div>
 </div>
-<%= button_to 'Add to Cart', '/orders', :controller => "orders", :method => "post", params: {:id => @product.id}%>
+<hr />
+<div class = "row review-box">
+  <h1 class = "text-center">Reviews</h1>
+  <%= form_for(@message) do |f| %>
+  <div class="field">
+    <p><%= f.text_area :content, placeholder: "Write a review for the "+ @product.id.to_s, :cols => "100", :rows=>"3"%>
+    <% hidden_field_tag "product_id", @product.id.to_s%>
+    <%= f.submit "Submit", :class => 'review-btn'%></p>
+  </div>
+
+  <% end %>
+  <%if(@reviews.exists?)%>
+    <%@reviews.each do |review|%>
+    <div class ="review-comments">
+    <h5><%=review.content%></h5>
+    <h6>By: <%= --review.user.username%> on <%= review.created_at.strftime("%d %b. %Y")%></h6>
+    </div>
+    <br />
+    <%end%>
+  <%else%>
+  <p> No reviews yet, be the first!</p>
+  <%end%>
+</div>
+<br />
+</div>

@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
-  def new
+  def newMessage
     @message = Message.new
   end
 
@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
-  def destroy
+  def destroyMessage
     @message = Message.find(params[:id])
     if logged_in? && current_user == @message.user
       @message.destroy
@@ -43,12 +43,18 @@ class MessagesController < ApplicationController
   end
 end
 
-  def create
+  def createMessage
     @message = Message.new(message_params)
+    puts"HEY IM PARAMS OVER HERE"
+    puts message_params[:content]
+    puts message_params[:product_id]
+    puts params[:product_id]
+    puts"HEY IM PARAMS OVER HERE"
     if session[:user_id]
         @message.user = current_user
+        @message.product = params[:product_id]
         if @message.save
-          redirect_to '/messages/show/'+@message.id.to_s
+          redirect_to '/charges/show'+params[:product_id]
         else
           render 'new'
         end
@@ -60,6 +66,7 @@ end
 
   private
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content).merge(:product_id => params[:product_id])
   end
+
 end

@@ -10,27 +10,25 @@ p "HI IM SEED"
 Product.delete_all
 
 Product.create(products_data = [
-  {:title => "Menorah", :description => "great gift", :price => 50, :image =>"https://cdn4.iconfinder.com/data/icons/christianity-judaism/713/religion-religious_03-128.png"},
-  {:title => "Candle", :description => "lovely stuff", :price => 15, :image =>"https://cdn4.iconfinder.com/data/icons/christianity-judaism/713/religion-religious_03-128.png"},
-  {:title => "Challah board", :description => "Shabbat Shalom!", :price => 25, :image =>"https://cdn4.iconfinder.com/data/icons/christianity-judaism/713/religion-religious_03-128.png"}
+  {:title => "Challah Board", :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", :price => 320, :image =>"http://i.imgur.com/4EC59Br.jpg"},
+  {:title => "Chanu-Kotel", :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", :price => 1150, :image =>"http://i.imgur.com/GwOpBgW.jpg"},
+  {:title => "Strong Memories", :description => "great gift", :price => 50, :image =>"http://i.imgur.com/THI5Qm9.jpg"},
+  {:title => "Custom Mezuzot", :description => "Shabbat Shalom!", :price => 25, :image =>"http://i.imgur.com/kgT3yQX.jpg"},
+  {:title => "Menorah-Copper Glow", :description => "great gift", :price => 50, :image =>"http://i.imgur.com/yL1HfJA.jpg"},
+  {:title => "Serenity", :description => "great gift", :price => 50, :image =>"http://i.imgur.com/jf6871k.jpg"},
+  {:title => "Stone Menorah", :description => "great gift", :price => 50, :image =>"http://i.imgur.com/xpHmf5y.jpg"},
+  {:title => "Shofar Holder", :description => "great gift", :price => 50, :image =>"http://i.imgur.com/1X8fQKM.jpg"},
+  {:title => "Warm Reflection", :description => "great gift", :price => 50, :image =>"http://i.imgur.com/uLYAL0a.jpg"}
+
   ])
 
 User.delete_all
 
 User.create(users_data = [
   {:username => "jesse", :password => "jesse"},
-  {:username => "bob", :password => "bob"},
-  {:username => "user", :password => "user"},
-  {:username => "lamar", :password => "lamar"},
-  {:username => "jean", :password => "jean"},
-  {:username => "jim", :password => "jim"}
-
-
+  {:username => "bob", :password => "bob"}
   ])
 
-
+  Message.delete_all
 
   Order.delete_all
-  Order.create(orders_data=[
-    {:items => "Menorah", :amount => 25, :image => "image", :user_id => 29, :quantity => 1}
-    ])

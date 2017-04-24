@@ -10,17 +10,187 @@ html, body {
 }
 
 body {
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Merzouga_desert.jpg');
+  // background-image: url('http://i.imgur.com/ijtj4sC.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
   margin: 0 auto;
   width: 960px;
+  font-family: 'Optima', sans-serif;
 }
 
+.boxes a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+.remove-btn{
+  font-size:20px;
+  background:white;
+  color:black;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+}
+.add-btn {
+  font-size: 20px !important;
+   border-top: 1px solid #1092e3;
+   background: #65a9d7;
+   padding: 4px 6px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 10px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.add-btn:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: white;
+   }
+// .add-btn:active {
+//    border-top-color: #a14b1d;
+//    background: #ffa64d;
+//    }
+   .minus-btn {
+     font-size: 20px !important;
+      border-top: 1px solid #1092e3;
+      background: #65a9d7;
+      padding: 4px 9px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 10px;
+      -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+      box-shadow: rgba(0,0,0,1) 0 1px 0;
+      text-shadow: rgba(0,0,0,.4) 0 1px 0;
+      color: white;
+      font-family: Georgia, serif;
+      text-decoration: none;
+      vertical-align: middle;
+      }
+   .minus-btn:hover {
+      border-top-color: #28597a;
+      background: #28597a;
+      color: white;
+      }
+  //  .minus-btn:active {
+  //     border-top-color: #a14b1d;
+  //     background: #ffa64d;
+  //     }
+.review-btn {
+  font-size: 16px !important;
+   border-top: 1px solid #1092e3;
+   background: #65a9d7;
+   padding: 10px 20px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 10px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.review-btn:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: white;
+   }
+.review-btn:active {
+   border-top-color: #a14b1d;
+   background: #ffa64d;
+   }
+.btn {
+  font-size: 26px !important;
+   border-top: 1px solid #1092e3;
+   background: #65a9d7;
+   padding: 10px 20px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.btn:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: white;
+   }
+.btn:active {
+   border-top-color: #a14b1d;
+   background: #ffa64d;
+   }
+.card{
+  color:black;
+  margin-top: 10px;
+    margin-right:10px;
+    margin-left: 10px;
+  background-color: white;
+  opacity:0.9;
+  border: 2px solid;
+  border-radius: 15px;
+}
+.card:hover{
+  border:2px solid #ffa64d
+}
+
+.store-pic{
+  width:250px;
+  height:250px;
+}
+
+.show-pic{
+  width:400px;
+  height:400px;
+}
+.show-info{
+  box-shadow: 3px 3px 3px 2px #ffa64d;
+
+}
+.review-comments{
+  border: 1px dotted white;
+}
+.review-box{
+  background-color:lightgray;
+  background-repeat:repeat;
+  border-radius: 10px;
+  height:100% !important;
+  width:100% !important;
+}
+.show-text{
+  color:black;
+}
+.order-image{
+  width:150px;
+  height:150px;
+}
+.about-images{
+  width:270px;
+  height:270px;
+}
+.about-banner{
+  width:100%;
+  height:100%;
+  background: url('http://i.imgur.com/yKiEPhQ.png') no-repeat;
+  background-size: cover;
+
+}
 /* Main */
 .main {
   color: #fff;

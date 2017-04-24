@@ -1,11 +1,20 @@
-<%= render 'messages/nav' %>
 <div class = "container">
+  <br />
+  <div class = "row home-banner">
+    <%=image_tag('http://i.imgur.com/ijtj4sC.png')%>
+  </div>
+  <div class = "row">
     <%@products.each do |product|%>
-    <div class="col-md-4">
-    <%= image_tag(product.image) %><br />
-    <h1><%= product.title %></h1>
-    Price : <%= product.price %> $
-    <%= button_to 'See more', '/charges/show/'+(product.id.to_s), :controller => "charges", :method => "get"%>
+    <span><div class="card col-md-4 boxes" style="width: 30rem;">
+    <%=link_to '/charges/show/'+(product.id.to_s) do %>
+      <img class="card-img-top store-pic" src="<%= product.image%>" alt="Jewish thing">
+      <div class="card-block">
+        <h3 class="card-title"><%= product.title %></h3>
+        <h4 class="card-text">$<%= product.price %></h4>
+        <h4 class="card-text"><%= product.messages.length%> Reviews</h4>
+      </div></span>
     </div>
-    <%end%>
+      <%end%>
+      <%end%>
+  </div>
   </div>

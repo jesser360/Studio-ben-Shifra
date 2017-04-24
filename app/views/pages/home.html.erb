@@ -1,18 +1,36 @@
 
 
   <div class="container">
-    <br />
-    <br />
-    <br />
-    <% if @user %>
-      <h2>Hello, <%=@user.username%></h2>
-      <%end%>
-    <h3>Welcome to message board world</h3>
-    <%= link_to 'See Messages',"/messages"%>
-    <%= link_to 'Shop',"/charges/new"%>
+    <div class = "row">
+      <!-- <div class = "col-md-4">
+        <br />
+        <h4>We make nice Judaica art for every occasion, rememberance, celebration, and nostalgia</h4>
+      </div> -->
+      <br />
+    </div>
+    <div class = "row home-banner">
+      <%=image_tag('http://i.imgur.com/ijtj4sC.png')%>
+    </div>
 
+    <div class = "row">
+      <%@products.take(3).each do |product|%>
+      <span><div class="card col-md-4 boxes" style="width: 30rem;">
+      <%=link_to '/charges/show/'+(product.id.to_s) do %>
+        <img class="card-img-top store-pic" src="<%= product.image%>" alt="Jewish thing">
+        <div class="card-block">
+          <h3 class="card-title"><%= product.title %></h3>
+          <h4 class="card-text">$<%= product.price %></h4>
+          <h4 class="card-text"><%= product.messages.length%> Reviews</h4>
+        </div></span>
+      </div>
+        <%end%>
+        <%end%>
+    </div>
+    <br />
+    <div class ="row">
+    <div class="col-md-12 text-center">
+      <%=button_to('See More',{route: '/charges/new', controller: 'charges'}, class:'btn')%>
+    </div>
+    <br /><br /><br />
   </div>
-
-
-
-</div>
+  </div>

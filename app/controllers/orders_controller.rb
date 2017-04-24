@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
       @items = cookies[:order_id].split('.')[1..-1]
       @items.each do |item|
         if (Order.find_by_id(item))
-        @orders.push(Order.find(item))
+          @orders.push(Order.find(item))
         end
       end
       @user = nil
