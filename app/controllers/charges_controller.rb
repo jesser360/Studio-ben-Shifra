@@ -18,7 +18,6 @@ class ChargesController < ApplicationController
   end
 
   def create
-    # Amount in cents
     @amount = 500
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -35,4 +34,4 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
-end
+ end

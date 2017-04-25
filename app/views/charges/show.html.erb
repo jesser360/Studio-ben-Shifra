@@ -26,7 +26,7 @@
 <div class = "container-fluid" id="review-anch">
 <div class = "row review-box"  style="margin:20px">
   <h1 class = "text-center">--Reviews--</h1>
-  <%if(current_user)%>
+  <%if(logged_in?)%>
   <%= form_for(@message) do |f| %>
   <div class="field text-center">
     <p><%= f.text_area :content, placeholder: "Write a review for the "+ @product.title, :cols => "100", :rows=>"3"%>
@@ -34,6 +34,8 @@
     <%= f.submit "Submit",:controller=>'messages', :class => 'review-btn'%></p>
   </div>
   <%end%>
+  <%else%>
+  <h3 class="text-center">Sign up for an account so you write a review too!</h3>
   <% end %>
   <%if(@reviews.exists?)%>
     <div class ="review-comments">
