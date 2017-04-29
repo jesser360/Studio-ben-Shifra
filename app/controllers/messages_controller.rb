@@ -47,11 +47,16 @@ end
     @message = Message.new(message_params)
     puts"HEY IM PARAMS OVER HERE"
     puts message_params[:content]
-    puts message_params[:product_id]
-    puts params[:product_id]
+    puts params[:product_title]
     puts"HEY IM PARAMS OVER HERE"
     if session[:user_id]
-        @product = Product.find(params[:product_id])
+        # @product = Product.find(params[:product_id])
+        @title = params[:product_title]
+        @productFind = Product.where(title: @title)
+        @product = @productFind[0]
+        puts "NAME HERE!!!!"
+        puts @product.title
+        puts current_user
         @message.user = current_user
         @message.product = @product
         if @message.save
@@ -67,7 +72,7 @@ end
 
   private
   def message_params
-    params.require(:message).permit(:content,:product_id)#.merge(:product_id => params[:product_id])
+    params.require(:message).permit(:content,:product_title)#.merge(:product_id => params[:product_id])
   end
 
 end

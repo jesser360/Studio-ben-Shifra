@@ -30,7 +30,7 @@
   <%= form_for(@message) do |f| %>
   <div class="field text-center">
     <p><%= f.text_area :content, placeholder: "Write a review for the "+ @product.title, :cols => "100", :rows=>"3"%>
-      <%= hidden_field_tag(:product_id, @product.id.to_s)%>
+      <%= hidden_field_tag(:product_title, @product.title.to_s)%>
     <%= f.submit "Submit",:controller=>'messages', :class => 'review-btn'%></p>
   </div>
   <%end%>

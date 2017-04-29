@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:success]="You have logged in!"
       redirect_to '/'
     else
-      flash.now[:danger]= "Incorrect Info"
+      flash[:error]= "Incorrect User Info, please try again"
       render 'new'
     end
   end

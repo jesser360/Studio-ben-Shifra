@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       redirect_to '/'
       session[:user_id] = @user.id
     else
+      flash[:error] = "Email already exists,please choose another"
       render 'new'
     end
   end
