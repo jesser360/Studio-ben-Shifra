@@ -1,4 +1,3 @@
 class Order < ApplicationRecord
-  belongs_to :user, optional: true
-  has_many :messages
+  belongs_to :user
 end

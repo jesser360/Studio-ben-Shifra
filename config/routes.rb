@@ -25,7 +25,8 @@ put '/orders/increase/:id' => 'orders#increase'
 put '/orders/decrease/:id' => 'orders#decrease'
 
 
-get '/charges/show/:id' => 'charges#show'
+get '/charges/show/:id' => 'product#show'
+get '/charges/new' => 'product#new'
 
 resources :users, :charges
 end

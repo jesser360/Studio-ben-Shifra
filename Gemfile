@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-
 gem 'stripe'
 gem 'bcrypt','~>3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -50,6 +49,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
