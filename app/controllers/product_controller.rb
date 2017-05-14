@@ -14,9 +14,7 @@ class ProductController < ApplicationController
       @product = Product.find(params[:id])
       @reviews = Message.where(product_id: @product.id)
       @message = Message.new
-      if(cookies[:order_id].nil?)
-      cookies[:order_id] =".-1."
-      end
+
   end
 
 

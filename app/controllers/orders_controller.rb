@@ -17,6 +17,9 @@ class OrdersController < ApplicationController
   end
 
   def create
+    if(cookies[:order_id].nil?)
+    cookies[:order_id] =".-1."
+    end
     if(session[:user_id])
       @user = current_user
       @items = []
@@ -58,6 +61,9 @@ class OrdersController < ApplicationController
       @order.items = @product.title
       @order.quantity = 1
       @order.user = nil
+      @order.save
+      puts "MADE NEW ORDER HERE"
+      puts @order.id.to_s
       @items = cookies[:order_id].split('.')[1..-1]
       @items.each do |item|
         if (Order.find_by_id(item))
@@ -70,8 +76,6 @@ class OrdersController < ApplicationController
         end
       end
       if (@duplicate == false)
-        @order.save
-        cookies[:order_id] = '.' if cookies[:order_id].nil?
         cookies[:order_id]+= @order.id.to_s + '.'
         cart = cookies[:order_id] || "empty"
       end
