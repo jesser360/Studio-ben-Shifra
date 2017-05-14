@@ -9,10 +9,10 @@
   </div>
 
 </div>
-  <div class = "container">
+  <div class = "container text-center">
   <div class = "row">
     <%@products.each do |product|%>
-    <span><div class="card col-xs-4 boxes" style="width: 30rem;">
+    <span><div class="card col-xs-4 boxes" style="width: 30rem; margin:40px">
     <%=link_to '/charges/show/'+(product.id.to_s) do %>
       <img class="card-img-top store-pic" src="<%= product.image%>" alt="Jewish thing">
       <div class="card-block">

@@ -18,7 +18,7 @@ get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 delete '/logout' => 'sessions#destroy'
 
-get '/orders' => 'orders#new'
+get '/orders' => 'orders#index'
 post '/orders' => 'orders#create'
 delete '/orders' => 'orders#destroy'
 put '/orders/increase/:id' => 'orders#increase'
@@ -26,7 +26,7 @@ put '/orders/decrease/:id' => 'orders#decrease'
 
 
 get '/charges/show/:id' => 'product#show'
-get '/charges/new' => 'product#new'
+get '/products/index' => 'product#index'
 
 resources :users, :charges
 end

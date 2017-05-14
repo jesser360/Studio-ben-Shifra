@@ -1,6 +1,7 @@
 class ProductController < ApplicationController
 
-  def new
+  def index
+    puts "WERE IN INDEX HEY"
     if session[:user_id]
     @user = current_user
   else

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_action :verify_authenticity_token
-    def new
+    def index
     if(session[:user_id])
       @orders = Order.where(user_id: session[:user_id])
       @user = current_user
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
       @orders.each do |x|
         @items.push(x[:items])
       end
-      puts "HEEYYYYOOOO"
+      puts "WERE IN CREATE ORDERS"
       puts @items
       @product = Product.find(order_params)
       @items.each do |item|
@@ -47,9 +47,9 @@ class OrdersController < ApplicationController
         redirect_to '/orders'
       end
     else
-      @product = Product.find(order_params)
+      @product = Product.find_by_id(order_params)
       puts "FINDING PRODUCT FOR CART!"
-      puts @product
+      puts @product.title
       @duplicate = false
       @check = []
       @order = Order.new(params = {})
