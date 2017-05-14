@@ -36,13 +36,13 @@
 <%if(order_total!=0)%>
   <h3>Order Total: $<%=order_total%></h3>
   <h5>*Shipping not inlcuded</h5>
-  <%payment = order_total * 100%>
+  <%@payment = order_total * 100%>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           route = '/charges/new'
           controller = 'charges'
           data-key="pk_test_7etxO4HRzvdlr0m2fbk7V76e"
           data-description= 'Studio Ben Shifra Payment'
-          data-amount= <%=payment%>
+          data-amount= <%=@payment%>
           data-locale="auto"></script>
   </div>
 <% else %>
