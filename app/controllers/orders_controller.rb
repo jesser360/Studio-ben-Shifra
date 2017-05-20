@@ -1,8 +1,11 @@
 class OrdersController < ApplicationController
   skip_before_action :verify_authenticity_token
     def index
+      if(cookies[:order_id].nil?)
+      cookies[:order_id] =".-1."
+      end
     if(session[:user_id])
-      @orders = Order.where(user_id: session[:user_id])
+      @orders = Order.where(user_id: session[:user_id]).where(is_bought: false)
       @user = current_user
     elsif(cookies[:order_id])
       @orders = []
@@ -17,14 +20,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if(cookies[:order_id].nil?)
-    cookies[:order_id] =".-1."
-    end
     if(session[:user_id])
       @user = current_user
       @items = []
       @exists = false
-      @orders = @user.orders
+      @orders = @user.orders.where(is_bought: false)
       @orders.each do |x|
         @items.push(x[:items])
       end
@@ -46,6 +46,7 @@ class OrdersController < ApplicationController
         @order.items = @product.title
         @order.quantity = 1
         @order.user = current_user
+        @order.is_bought = false
         @order.save
         redirect_to '/orders'
       end
@@ -61,6 +62,7 @@ class OrdersController < ApplicationController
       @order.items = @product.title
       @order.quantity = 1
       @order.user = nil
+      @order.is_bought = false
       @order.save
       puts "MADE NEW ORDER HERE"
       puts @order.id.to_s
@@ -86,7 +88,6 @@ class OrdersController < ApplicationController
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
-    flash[:notice] = @order.items + "was deleted"
     redirect_to '/orders'
   end
 
@@ -106,6 +107,12 @@ class OrdersController < ApplicationController
     end
     redirect_to '/orders'
   end
+
+  def history
+    @orders = Order.where(user_id: session[:user_id]).where(is_bought: true)
+    @user = current_user
+  end
+
 
   private
   def order_params

@@ -1,6 +1,7 @@
 <div class = "container">
 <div class="jumbotron">
 <h2>Welcome to your cart!</h2>
+<%= button_to 'See past orders', 'orders/history', method: 'get', class: "add-btn"%>
 <p class="lead">
 </div>
 <div class="container">
@@ -32,18 +33,18 @@
 <hr />
     <%order_total += (order.amount * order.quantity)%>
     <%end%>
+    <div class="text-left">
+      <h3>Order Total: $<%=order_total%></h3>
+      <h5>*Shipping not inlcuded</h5>
+      <%@payment = order_total * 100%>
+    </div>
   <div class = "row total text-right">
 <%if(order_total!=0)%>
-  <h3>Order Total: $<%=order_total%></h3>
-  <h5>*Shipping not inlcuded</h5>
-  <%@payment = order_total * 100%>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          route = '/charges/new'
-          controller = 'charges'
-          data-key="pk_test_7etxO4HRzvdlr0m2fbk7V76e"
-          data-description= 'Studio Ben Shifra Payment'
-          data-amount= <%=@payment%>
-          data-locale="auto"></script>
+    <%if logged_in?%>
+  <%= button_to 'Go to checkout', '/charges/new', method: 'get', class: 'btn'%>
+  <%else%>
+  <%= button_to 'Sign in then checkout','/signup', method: 'get', class: 'btn'%>
+  <%end%>
   </div>
 <% else %>
 <div class="text-center">

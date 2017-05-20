@@ -1,0 +1,46 @@
+  <br />
+  <h1 class ="text-center confirm">Confirm your order and pay</h1>
+  <div class = 'container'>
+  <br /><br />
+  <%order_total = 0%>
+  <% @orders.each do |order|%>
+  <div class ="row">
+  <div class ="col-md-4">
+    <img class="order-image" src="<%= order.image%>" alt="Jewish thing">
+  </div>
+  <div class ="col-md-4">
+  <h2><%= order.items %> -- $<%= order.amount%> each</h2>
+  <h3>Quantity: <%= order.quantity %></h3>
+  </div>
+  <%amount = order.amount * order.quantity%>
+  <div class ="col-md-4 text-center">
+    <h2>$<%=amount%></h2>
+  </div>
+  <%order_total += (order.amount * order.quantity)%>
+</div>
+<hr />
+  <%end%>
+  <h1 class ="text-right" style="margin-right:70px">Total:<%=order_total%></h1>
+  <%@payment = order_total *100%>
+  <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+  </article>
+  <div class ="text-right" style="margin-right:90px">
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="pk_live_BcXpGXVecQ0CIgsB3vFHOlW4"
+  data-description= "Studio Ben Shifra Payment"
+  data-email="<%= @user.username%>"
+  data-amount= "<%= @payment %>"
+  data-locale="auto"
+  data-billingAddress="true"
+  data-shippingAddress="true">
+  </script>
+</div>
+<br />
+</div>
+<%end%>

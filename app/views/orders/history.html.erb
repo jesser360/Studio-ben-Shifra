@@ -1,0 +1,10 @@
+<div class = "container">
+  <% @orders.each do |order|%>
+  <h2>Item: <%= order.items %> at $<%= order.amount%> each</h2>
+  <h2>Quantity: <%= order.quantity %></h2>
+  <%amount = order.amount * order.quantity%>
+  <h3>Total: $<%=amount%></h3>
+  <h3>Bought on <%=order.updated_at.strftime("%m/%d/%Y")%></h3>
+  <hr />
+  <%end%>
+</div>

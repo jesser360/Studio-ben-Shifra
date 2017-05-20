@@ -1,2 +1,8 @@
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
-<%= link_to 'Back to Shop',"/charges/new"%>
+<div class="container text-center">
+  <br /><br />
+<h2>Thank you for your business, it is much appreciated from all of us here at Studio Ben shifra!</h2>
+<h3>Your order has been received and a reciept will be sent to you shortly at the email you provided of <%= @user.username%></h2>
+<h4>If there is a problem with your email or any of your orders, please contact us immediately</h3>
+<%= button_to 'See all your orders', 'orders/history', method: 'get', class:'add-btn'%>
+<br /><br />
+</div>

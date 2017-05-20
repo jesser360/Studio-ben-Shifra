@@ -14,8 +14,8 @@ class ProductController < ApplicationController
       @product = Product.find(params[:id])
       @reviews = Message.where(product_id: @product.id)
       @message = Message.new
-
   end
+    
 
 
 end
