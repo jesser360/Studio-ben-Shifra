@@ -10,56 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520010703) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "messages", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "product_id"
-    t.index ["product_id"], name: "index_messages_on_product_id", using: :btree
-    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "items"
-    t.integer  "amount"
-    t.string   "image"
-    t.boolean  "is_bought"
-    t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.integer  "price"
-    t.text     "description"
-    t.string   "image"
-    t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "address"
-    t.integer  "zipcode"
-    t.string   "name"
-    t.string   "state"
-    t.string   "country"
-    t.string   "apartment"
-  end
-
-  add_foreign_key "messages", "products"
-  add_foreign_key "messages", "users"
-  add_foreign_key "orders", "users"
 end
