@@ -28,7 +28,7 @@ put '/orders/decrease/:id' => 'orders#decrease'
 
 post 'charges' => 'charges#create'
 get '/charges/show/:id' => 'product#show'
-get '/products/index' => 'product#index'
+get '/products/:group' => 'product#index'
 
 resources :users
 resources :charges

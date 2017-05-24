@@ -5,7 +5,13 @@
   </div>
   <div class="row">
     <h1 class = "shop-words">Shop</h1>
-    <h3 class = "shop-small">Sign up above for added features</h3>
+    <%if @products[0].group == 'judaica'%>
+    <h1 class ="shop-small">Ceremonical Judaica Items</h1>
+    <%elsif @products[0].group == 'yahrzeit'%>
+    <h1 class="shop-small">Yahrzeit Memorial Candles</h1>
+    <%else%>
+    <h1 class="shop-small">Holiday and Shabbat</h1>
+    <%end%>
   </div>
 
 </div>
