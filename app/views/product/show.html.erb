@@ -2,7 +2,7 @@
   <br /><br /><br />
 
   <div class="row">
-<div class = "show-info col-md-6 " >
+<div class = "show-info col-md-4 " >
     <h2> <%= @product.title%></h2>
     <h4 class = "review-link"><%=link_to @product.messages.length.to_s+' reviews','#review-anch'%></h4>
     <hr />
@@ -19,7 +19,7 @@
     </div>
   </div>
 </div>
-<div class = "col-md-6">
+<div class = "col-md-8">
 <img class="show-pic" src="<%= @product.image%>" alt="Jewish thing" style="height:100%;width:100%">
 </div>
 </div>
